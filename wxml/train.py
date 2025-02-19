@@ -29,7 +29,7 @@ def classification_accuracy(loader, model, device, dtype):
             # preds = torch.argmax(scores, dim=-1, keepdim=True)
             # n_correct += torch.sum(preds == y).item()
             n_correct += count_matches(preds, y)
-            print(count_matches(preds, y), preds, y)
+            # print(count_matches(preds, y), preds, y)
             # n += len(y)
             n += len(y) * y.shape[-1]
         acy = float(n_correct) / n # TODO: I don't think you need to convert to float
