@@ -14,6 +14,15 @@ def to_base(x, b):
             return go(x // b, b, acc)
     return go(x, b, [])
 
+def bin_to_dec(x):
+    def go(x, d, acc):
+        match x:
+            case []:
+                return acc
+            case [x, *xs]:
+                return go(xs, d + 1, acc + x * (2 ** d))
+    return go(list(reversed(x)), 0, 0)
+
 
 def bits(x):
     return to_base(x, 2)
@@ -46,6 +55,15 @@ bittensor64 = partial(bittensor, n=64)
 # hamming weight
 def wt(xs):
     return th.sum(xs, dim=-1)
+
+
+# maximum representable number in base b using d digits
+def max_rep(b, d):
+    return (b ** d) - 1
+
+# number of digits needed to represent x in base b
+def digits_needed(x, b):
+    return len(to_base(x, b))
 
 
 def make_data_hamming(n):
