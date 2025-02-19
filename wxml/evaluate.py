@@ -14,9 +14,6 @@ def evaluate(model, loss_fn, loader):
     
     with torch.no_grad():  # Disable gradient computation
         for x, y in loader:
-            # print("test:", model(x))
-            # y_pred = [round(tt) for tt in model(x)] # round to the nearest integer 
-            #print(round(model(x)[0][0]))
             y_pred = torch.tensor([bitround(tt) for tt in model(x)])
             print(y_pred)
             loss = loss_fn(y_pred, y)

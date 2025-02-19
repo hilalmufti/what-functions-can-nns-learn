@@ -37,7 +37,7 @@ bitvector64 = partial(bitvector, n=64)
 
 
 def bittensor(x, n):
-    return th.tensor(bitvector(x, n))
+    return th.tensor(bitvector(x, n), dtype=th.float32)
 bittensor8 = partial(bittensor, n=8)
 bittensor16 = partial(bittensor, n=16)
 bittensor32 = partial(bittensor, n=32)
@@ -51,4 +51,7 @@ def wt(xs):
 def make_data_hamming(n):
     xs = list(map(bittensor8, take(n, iterate(lambda _: random.randint(0, 64), random.randint(0, 64)))))
     ys = list(map(compose(bittensor8, wt), xs))
+
+    [x.requires_grad_() for x in xs]
+    [y.requires_grad_() for y in ys]
     return xs, ys
