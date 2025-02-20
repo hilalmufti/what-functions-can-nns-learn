@@ -6,7 +6,7 @@ def accuracy(x, y):
     acc = torch.sum(x == y) / len(x)
     return acc.item()
 
-def evaluate(model, loss_fn, loader):
+def evaluate(model, loss_fn, loader, device):
     model.eval()  # Set the model to evaluation mode
     total_loss = 0
     total_acc = 0
@@ -14,8 +14,9 @@ def evaluate(model, loss_fn, loader):
     
     with torch.no_grad():  # Disable gradient computation
         for x, y in loader:
-            y_pred = torch.tensor([bitround(tt) for tt in model(x)])
-            print(y_pred)
+            x, y = x.to(device), y.to(device)
+            scores = model(x)
+            y_pred = torch.tensor([bitround(tt) for tt in scores], device=device)
             loss = loss_fn(y_pred, y)
             acc = accuracy(y_pred, y)
             

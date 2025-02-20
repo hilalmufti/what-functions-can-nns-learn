@@ -12,7 +12,6 @@ def split(xs, p):
     return xs[:int(n * p)], xs[int(n * p):]
 
 def make_loader(xs, ys, batch_size):
-    print(xs, ys)
     xs, ys = torch.tensor(xs, dtype=torch.float32, requires_grad=True), torch.tensor(ys, dtype=torch.float32, requires_grad=True)
     data = list(zip(xs, ys))
     loader = torch.utils.data.DataLoader(data, batch_size=batch_size, shuffle=True)
