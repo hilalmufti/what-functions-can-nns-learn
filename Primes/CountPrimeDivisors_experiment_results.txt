@@ -1,3 +1,5 @@
+Epoch = 20 & Adam -----------------------------------------------------
+
 N=100, Input=int, Layers=0 | Avg Train Loss: 7.6024 | Accuracy: 0.0000
 N=100, Input=int, Layers=1 | Avg Train Loss: 2.3634 | Accuracy: 0.0000
 N=100, Input=int, Layers=2 | Avg Train Loss: 2.3146 | Accuracy: 0.1500
@@ -25,3 +27,63 @@ N=10000, Input=binary, Layers=2 | Avg Train Loss: 0.7160 | Accuracy: 0.5125
 N=10000, Input=modular, Layers=0 | Avg Train Loss: 2.6940 | Accuracy: 0.3080
 N=10000, Input=modular, Layers=1 | Avg Train Loss: 0.8381 | Accuracy: 0.6405
 N=10000, Input=modular, Layers=2 | Avg Train Loss: 0.4654 | Accuracy: 0.6935
+
+Epoch = 40 & AdamW-----------------------------------------------------------------
+
+N=100, Input=int, Layers=0 | Avg Train Loss: 8.4883 | Accuracy: 0.0000
+N=100, Input=int, Layers=1 | Avg Train Loss: 0.7545 | Accuracy: 0.6500
+N=100, Input=int, Layers=2 | Avg Train Loss: 0.4571 | Accuracy: 0.4500
+N=100, Input=binary, Layers=0 | Avg Train Loss: 1.8448 | Accuracy: 0.1500
+N=100, Input=binary, Layers=1 | Avg Train Loss: 1.2000 | Accuracy: 0.6000
+N=100, Input=binary, Layers=2 | Avg Train Loss: 0.5082 | Accuracy: 0.6500
+N=100, Input=modular, Layers=0 | Avg Train Loss: 0.9914 | Accuracy: 0.3000
+N=100, Input=modular, Layers=1 | Avg Train Loss: 0.6878 | Accuracy: 0.6500
+N=100, Input=modular, Layers=2 | Avg Train Loss: 0.5278 | Accuracy: 0.6500
+N=1000, Input=int, Layers=0 | Avg Train Loss: 0.7721 | Accuracy: 0.5100
+N=1000, Input=int, Layers=1 | Avg Train Loss: 0.5992 | Accuracy: 0.5100
+N=1000, Input=int, Layers=2 | Avg Train Loss: 0.5465 | Accuracy: 0.5100
+N=1000, Input=binary, Layers=0 | Avg Train Loss: 1.5376 | Accuracy: 0.3800
+N=1000, Input=binary, Layers=1 | Avg Train Loss: 0.5073 | Accuracy: 0.5550
+N=1000, Input=binary, Layers=2 | Avg Train Loss: 0.4220 | Accuracy: 0.5100
+N=1000, Input=modular, Layers=0 | Avg Train Loss: 1.5753 | Accuracy: 0.3200
+N=1000, Input=modular, Layers=1 | Avg Train Loss: 0.3390 | Accuracy: 0.7600
+N=1000, Input=modular, Layers=2 | Avg Train Loss: 0.2687 | Accuracy: 0.8150
+N=10000, Input=int, Layers=0 | Avg Train Loss: 0.8526 | Accuracy: 0.4090
+N=10000, Input=int, Layers=1 | Avg Train Loss: 0.6903 | Accuracy: 0.4120
+N=10000, Input=int, Layers=2 | Avg Train Loss: 0.6934 | Accuracy: 0.4075
+N=10000, Input=binary, Layers=0 | Avg Train Loss: 0.7481 | Accuracy: 0.5075
+N=10000, Input=binary, Layers=1 | Avg Train Loss: 0.5045 | Accuracy: 0.5235
+N=10000, Input=binary, Layers=2 | Avg Train Loss: 0.4761 | Accuracy: 0.5095
+N=10000, Input=modular, Layers=0 | Avg Train Loss: 0.6367 | Accuracy: 0.5750
+N=10000, Input=modular, Layers=1 | Avg Train Loss: 0.2253 | Accuracy: 0.7275
+N=10000, Input=modular, Layers=2 | Avg Train Loss: 0.2214 | Accuracy: 0.7140
+
+With Sigmoid & Epoch = 40 & AdamW----------------------------------------------------
+
+N=100, Input=int, Layers=0 | Avg Train Loss: 2.4832 | Accuracy: 0.0000
+N=100, Input=int, Layers=1 | Avg Train Loss: 1.0433 | Accuracy: 0.2000
+N=100, Input=int, Layers=2 | Avg Train Loss: 0.9681 | Accuracy: 0.2000
+N=100, Input=binary, Layers=0 | Avg Train Loss: 1.6244 | Accuracy: 0.2000
+N=100, Input=binary, Layers=1 | Avg Train Loss: 1.0922 | Accuracy: 0.2000
+N=100, Input=binary, Layers=2 | Avg Train Loss: 1.0061 | Accuracy: 0.2000
+N=100, Input=modular, Layers=0 | Avg Train Loss: 1.4879 | Accuracy: 0.2000
+N=100, Input=modular, Layers=1 | Avg Train Loss: 0.9718 | Accuracy: 0.2000
+N=100, Input=modular, Layers=2 | Avg Train Loss: 0.8896 | Accuracy: 0.2000
+N=1000, Input=int, Layers=0 | Avg Train Loss: 2.1422 | Accuracy: 0.1950
+N=1000, Input=int, Layers=1 | Avg Train Loss: 1.8449 | Accuracy: 0.1950
+N=1000, Input=int, Layers=2 | Avg Train Loss: 1.8252 | Accuracy: 0.1950
+N=1000, Input=binary, Layers=0 | Avg Train Loss: 2.3051 | Accuracy: 0.1950
+N=1000, Input=binary, Layers=1 | Avg Train Loss: 1.8589 | Accuracy: 0.1950
+N=1000, Input=binary, Layers=2 | Avg Train Loss: 1.8297 | Accuracy: 0.1950
+N=1000, Input=modular, Layers=0 | Avg Train Loss: 1.9726 | Accuracy: 0.1950
+N=1000, Input=modular, Layers=1 | Avg Train Loss: 1.8455 | Accuracy: 0.1950
+N=1000, Input=modular, Layers=2 | Avg Train Loss: 1.8161 | Accuracy: 0.1950
+N=10000, Input=int, Layers=0 | Avg Train Loss: 2.9442 | Accuracy: 0.1275
+N=10000, Input=int, Layers=1 | Avg Train Loss: 2.7286 | Accuracy: 0.1275
+N=10000, Input=int, Layers=2 | Avg Train Loss: 2.7261 | Accuracy: 0.1275
+N=10000, Input=binary, Layers=0 | Avg Train Loss: 2.7637 | Accuracy: 0.1275
+N=10000, Input=binary, Layers=1 | Avg Train Loss: 2.7275 | Accuracy: 0.1275
+N=10000, Input=binary, Layers=2 | Avg Train Loss: 2.7254 | Accuracy: 0.1275
+N=10000, Input=modular, Layers=0 | Avg Train Loss: 2.7499 | Accuracy: 0.1275
+N=10000, Input=modular, Layers=1 | Avg Train Loss: 2.7268 | Accuracy: 0.1275
+N=10000, Input=modular, Layers=2 | Avg Train Loss: 2.7233 | Accuracy: 0.1275

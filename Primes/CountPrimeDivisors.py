@@ -45,6 +45,7 @@ class PrimeMLP(nn.Module):
             layers.append(nn.ReLU())
             prev_size = size
         layers.append(nn.Linear(prev_size, 1))
+        # layers.append(nn.Sigmoid())
         self.model = nn.Sequential(*layers)
 
     def forward(self, x):
@@ -82,11 +83,12 @@ def run_experiment(N, input_type, hidden_layers, output_file):
     # Model, loss, optimizer
     model = PrimeMLP(X_train.shape[1], hidden_layers)
     criterion = nn.MSELoss()
-    optimizer = optim.Adam(model.parameters(), lr=0.0001, weight_decay=1e-4)
+    # optimizer = optim.Adam(model.parameters(), lr=0.0001, weight_decay=1e-4)
+    optimizer = optim.AdamW(model.parameters(), lr=1e-3)
     scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.1)
 
     # Training Loop
-    epochs = 20
+    epochs = 40
     total_loss = 0
     for epoch in range(epochs):
         model.train()

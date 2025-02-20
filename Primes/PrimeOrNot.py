@@ -77,11 +77,12 @@ def run_experiment(N, input_type, hidden_layers, output_file):
     # Model, loss, optimizer
     model = PrimeMLP(X_train.shape[1], hidden_layers)
     criterion = nn.BCELoss()
-    optimizer = optim.Adam(model.parameters(), lr=0.0001, weight_decay=1e-4)
+    # optimizer = optim.AdamW(model.parameters(), lr=0.0001, weight_decay=1e-4)
+    optimizer = optim.AdamW(model.parameters(), lr=1e-3)
     scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.1)
 
     # Training Loop
-    epochs = 20
+    epochs = 100
     for epoch in range(epochs):
         model.train()
         total_loss = 0
@@ -109,7 +110,8 @@ def run_experiment(N, input_type, hidden_layers, output_file):
         f.write(result)
 
 # Run experiments
-Ns = [100, 1000, 10000]
+# Ns = [100, 1000, 10000]
+Ns = [100000]
 input_types = ['int', 'binary', 'modular']
 hidden_layer_configs = [[], [128], [128, 64]]
 output_file = "PrimeOrNot_experiment_results.txt"

@@ -1,3 +1,5 @@
+Epoch = 20 & Adam -----------------------------------------------------
+
 N=100, Input=int, Layers=0 | Avg Loss: 0.0354 | Accuracy: 0.5000
 N=100, Input=int, Layers=1 | Avg Loss: 0.0319 | Accuracy: 0.9000
 N=100, Input=int, Layers=2 | Avg Loss: 0.0286 | Accuracy: 0.9000
@@ -25,3 +27,102 @@ N=10000, Input=binary, Layers=2 | Avg Loss: 0.0138 | Accuracy: 0.8770
 N=10000, Input=modular, Layers=0 | Avg Loss: 0.0228 | Accuracy: 0.8770
 N=10000, Input=modular, Layers=1 | Avg Loss: 0.0112 | Accuracy: 0.8980
 N=10000, Input=modular, Layers=2 | Avg Loss: 0.0082 | Accuracy: 0.9135
+
+Epoch = 40 & Adam -----------------------------------------------------
+
+N=100, Input=int, Layers=0 | Avg Loss: 0.0145 | Accuracy: 0.9000
+N=100, Input=int, Layers=1 | Avg Loss: 0.0149 | Accuracy: 0.9000
+N=100, Input=int, Layers=2 | Avg Loss: 0.0151 | Accuracy: 0.9000
+N=100, Input=binary, Layers=0 | Avg Loss: 0.0162 | Accuracy: 0.8000
+N=100, Input=binary, Layers=1 | Avg Loss: 0.0165 | Accuracy: 0.8500
+N=100, Input=binary, Layers=2 | Avg Loss: 0.0160 | Accuracy: 0.9000
+N=100, Input=modular, Layers=0 | Avg Loss: 0.0430 | Accuracy: 0.1000
+N=100, Input=modular, Layers=1 | Avg Loss: 0.0162 | Accuracy: 0.9000
+N=100, Input=modular, Layers=2 | Avg Loss: 0.0147 | Accuracy: 0.9000
+N=1000, Input=int, Layers=0 | Avg Loss: 0.0135 | Accuracy: 0.8250
+N=1000, Input=int, Layers=1 | Avg Loss: 0.0112 | Accuracy: 0.8250
+N=1000, Input=int, Layers=2 | Avg Loss: 0.0112 | Accuracy: 0.8250
+N=1000, Input=binary, Layers=0 | Avg Loss: 0.0151 | Accuracy: 0.7650
+N=1000, Input=binary, Layers=1 | Avg Loss: 0.0104 | Accuracy: 0.8250
+N=1000, Input=binary, Layers=2 | Avg Loss: 0.0084 | Accuracy: 0.8250
+N=1000, Input=modular, Layers=0 | Avg Loss: 0.0340 | Accuracy: 0.3400
+N=1000, Input=modular, Layers=1 | Avg Loss: 0.0104 | Accuracy: 0.8250
+N=1000, Input=modular, Layers=2 | Avg Loss: 0.0060 | Accuracy: 0.8700
+N=10000, Input=int, Layers=0 | Avg Loss: 0.0094 | Accuracy: 0.8770
+N=10000, Input=int, Layers=1 | Avg Loss: 0.0093 | Accuracy: 0.8770
+N=10000, Input=int, Layers=2 | Avg Loss: 0.0093 | Accuracy: 0.8770
+N=10000, Input=binary, Layers=0 | Avg Loss: 0.0087 | Accuracy: 0.8770
+N=10000, Input=binary, Layers=1 | Avg Loss: 0.0070 | Accuracy: 0.8770
+N=10000, Input=binary, Layers=2 | Avg Loss: 0.0068 | Accuracy: 0.8770
+N=10000, Input=modular, Layers=0 | Avg Loss: 0.0094 | Accuracy: 0.8770
+N=10000, Input=modular, Layers=1 | Avg Loss: 0.0046 | Accuracy: 0.8965
+N=10000, Input=modular, Layers=2 | Avg Loss: 0.0037 | Accuracy: 0.9170
+
+Epoch = 100 & AdamW -----------------------------------------------------
+
+N=100, Input=int, Layers=0 | Avg Loss: 0.0071 | Accuracy: 0.6000
+N=100, Input=int, Layers=1 | Avg Loss: 0.0061 | Accuracy: 0.9000
+N=100, Input=int, Layers=2 | Avg Loss: 0.0062 | Accuracy: 0.9000
+N=100, Input=binary, Layers=0 | Avg Loss: 0.0069 | Accuracy: 0.7000
+N=100, Input=binary, Layers=1 | Avg Loss: 0.0058 | Accuracy: 0.9000
+N=100, Input=binary, Layers=2 | Avg Loss: 0.0054 | Accuracy: 0.9000
+N=100, Input=modular, Layers=0 | Avg Loss: 0.0136 | Accuracy: 0.3000
+N=100, Input=modular, Layers=1 | Avg Loss: 0.0057 | Accuracy: 0.8500
+N=100, Input=modular, Layers=2 | Avg Loss: 0.0051 | Accuracy: 0.9000
+N=1000, Input=int, Layers=0 | Avg Loss: 0.0049 | Accuracy: 0.8250
+N=1000, Input=int, Layers=1 | Avg Loss: 0.0045 | Accuracy: 0.8250
+N=1000, Input=int, Layers=2 | Avg Loss: 0.0045 | Accuracy: 0.8250
+N=1000, Input=binary, Layers=0 | Avg Loss: 0.0049 | Accuracy: 0.8250
+N=1000, Input=binary, Layers=1 | Avg Loss: 0.0035 | Accuracy: 0.8150
+N=1000, Input=binary, Layers=2 | Avg Loss: 0.0030 | Accuracy: 0.8200
+N=1000, Input=modular, Layers=0 | Avg Loss: 0.0079 | Accuracy: 0.5600
+N=1000, Input=modular, Layers=1 | Avg Loss: 0.0028 | Accuracy: 0.8450
+N=1000, Input=modular, Layers=2 | Avg Loss: 0.0016 | Accuracy: 0.8950
+N=10000, Input=int, Layers=0 | Avg Loss: 0.0037 | Accuracy: 0.8770
+N=10000, Input=int, Layers=1 | Avg Loss: 0.0037 | Accuracy: 0.8770
+N=10000, Input=int, Layers=2 | Avg Loss: 0.0037 | Accuracy: 0.8770
+N=10000, Input=binary, Layers=0 | Avg Loss: 0.0033 | Accuracy: 0.8760
+N=10000, Input=binary, Layers=1 | Avg Loss: 0.0027 | Accuracy: 0.8770
+N=10000, Input=binary, Layers=2 | Avg Loss: 0.0026 | Accuracy: 0.8765
+N=10000, Input=modular, Layers=0 | Avg Loss: 0.0037 | Accuracy: 0.8770
+N=10000, Input=modular, Layers=1 | Avg Loss: 0.0015 | Accuracy: 0.9050
+N=10000, Input=modular, Layers=2 | Avg Loss: 0.0014 | Accuracy: 0.9180
+
+? Epoch = 100 ----------------------------------------------------
+
+N=100, Input=int, Layers=0 | Avg Loss: 0.0063 | Accuracy: 0.9000
+N=100, Input=int, Layers=1 | Avg Loss: 0.0058 | Accuracy: 0.9000
+N=100, Input=int, Layers=2 | Avg Loss: 0.0058 | Accuracy: 0.9000
+N=100, Input=binary, Layers=0 | Avg Loss: 0.0056 | Accuracy: 0.9000
+N=100, Input=binary, Layers=1 | Avg Loss: 0.0033 | Accuracy: 0.8000
+N=100, Input=binary, Layers=2 | Avg Loss: 0.0019 | Accuracy: 0.7500
+N=100, Input=modular, Layers=0 | Avg Loss: 0.0058 | Accuracy: 0.8000
+N=100, Input=modular, Layers=1 | Avg Loss: 0.0029 | Accuracy: 0.9000
+N=100, Input=modular, Layers=2 | Avg Loss: 0.0005 | Accuracy: 0.9500
+N=1000, Input=int, Layers=0 | Avg Loss: 0.0046 | Accuracy: 0.8250
+N=1000, Input=int, Layers=1 | Avg Loss: 0.0045 | Accuracy: 0.8250
+N=1000, Input=int, Layers=2 | Avg Loss: 0.0045 | Accuracy: 0.8250
+N=1000, Input=binary, Layers=0 | Avg Loss: 0.0038 | Accuracy: 0.8150
+N=1000, Input=binary, Layers=1 | Avg Loss: 0.0025 | Accuracy: 0.7800
+N=1000, Input=binary, Layers=2 | Avg Loss: 0.0003 | Accuracy: 0.8100
+N=1000, Input=modular, Layers=0 | Avg Loss: 0.0038 | Accuracy: 0.8150
+N=1000, Input=modular, Layers=1 | Avg Loss: 0.0013 | Accuracy: 0.9250
+N=1000, Input=modular, Layers=2 | Avg Loss: 0.0010 | Accuracy: 0.9100
+N=10000, Input=int, Layers=0 | Avg Loss: 0.0037 | Accuracy: 0.8770
+N=10000, Input=int, Layers=1 | Avg Loss: 0.0037 | Accuracy: 0.8770
+N=10000, Input=int, Layers=2 | Avg Loss: 0.0037 | Accuracy: 0.8770
+N=10000, Input=binary, Layers=0 | Avg Loss: 0.0028 | Accuracy: 0.8770
+N=10000, Input=binary, Layers=1 | Avg Loss: 0.0023 | Accuracy: 0.8640
+N=10000, Input=binary, Layers=2 | Avg Loss: 0.0010 | Accuracy: 0.8405
+N=10000, Input=modular, Layers=0 | Avg Loss: 0.0024 | Accuracy: 0.8860
+N=10000, Input=modular, Layers=1 | Avg Loss: 0.0014 | Accuracy: 0.9220
+N=10000, Input=modular, Layers=2 | Avg Loss: 0.0014 | Accuracy: 0.9200
+
+Ns = [100000] & Epoch = 100 & AdamW ---------------------------------------
+N=100000, Input=int, Layers=0 | Avg Loss: 0.0032 | Accuracy: 0.9033
+N=100000, Input=int, Layers=1 | Avg Loss: 0.0032 | Accuracy: 0.9033
+N=100000, Input=int, Layers=2 | Avg Loss: 0.0032 | Accuracy: 0.9033
+
+    X = np.array([to_binary(n) for n in X.flatten()])
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (99998,) + inhomogeneous part.
