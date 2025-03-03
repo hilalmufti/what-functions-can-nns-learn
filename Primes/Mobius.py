@@ -4,53 +4,42 @@ import torch.optim as optim
 import numpy as np
 from sklearn.model_selection import train_test_split
 from torch.utils.data import TensorDataset, DataLoader
+from sympy import mobius, factorint
 
+# Compute Möbius function values
+def compute_mobius(n):
+    return int(mobius(n))  # Ensure integer output
 
-# check for primality
-def is_prime(n):
-    if isinstance(n, np.ndarray):  # Ensure n is a scalar
-        n = n.item()
-    if n < 2:
-        return 0
-    for i in range(2, int(n ** 0.5) + 1):
-        if n % i == 0:
-            return 0
-    return 1
-
-
-# convert to binary representation
+# Convert integer to binary representation
 def to_binary(n, bits=14):
     return np.array([int(x) for x in bin(n)[2:].zfill(bits)])
 
-
-# Compute x mod p for small primes (2, 3, 5, 7, 11).
+# Compute x mod p for small primes (2, 3, 5, 7, 11)
 def modular_features(n):
     return np.array([n % p for p in [2, 3, 5, 7, 11]])
 
-
-# MLP Model
-class PrimeMLP(nn.Module):
+# MLP Model for Möbius classification
+class MobiusMLP(nn.Module):
     def __init__(self, input_size, hidden_layers):
-        super(PrimeMLP, self).__init__()
+        super(MobiusMLP, self).__init__()
         layers = []
         prev_size = input_size
         for size in hidden_layers:
             layers.append(nn.Linear(prev_size, size))
             layers.append(nn.ReLU())
             prev_size = size
-        layers.append(nn.Linear(prev_size, 1))
-        layers.append(nn.Sigmoid())
+        layers.append(nn.Linear(prev_size, 3))  # Output classes (-1, 0, 1)
+        layers.append(nn.Softmax(dim=1))  # Multi-class classification
         self.model = nn.Sequential(*layers)
 
     def forward(self, x):
         return self.model(x)
 
-
 # Experiment loop
 def run_experiment(N, input_type, hidden_layers, output_file):
     # Generate dataset
-    X = np.arange(2, N).reshape(-1, 1)
-    y = np.array([is_prime(n) for n in X]).reshape(-1, 1)
+    X = np.arange(1, N).reshape(-1, 1)
+    y = np.array([compute_mobius(n) + 1 for n in X.flatten()], dtype=np.int64)  # Shift labels to (0,1,2)
 
     if input_type == 'binary':
         X = np.array([to_binary(n) for n in X.flatten()])
@@ -64,9 +53,9 @@ def run_experiment(N, input_type, hidden_layers, output_file):
 
     # Convert to PyTorch tensors
     X_train_tensor = torch.tensor(X_train, dtype=torch.float32)
-    y_train_tensor = torch.tensor(y_train, dtype=torch.float32)
+    y_train_tensor = torch.tensor(y_train, dtype=torch.long)  # Use long for classification
     X_test_tensor = torch.tensor(X_test, dtype=torch.float32)
-    y_test_tensor = torch.tensor(y_test, dtype=torch.float32)
+    y_test_tensor = torch.tensor(y_test, dtype=torch.long)
 
     # Create DataLoader
     train_dataset = TensorDataset(X_train_tensor, y_train_tensor)
@@ -75,9 +64,8 @@ def run_experiment(N, input_type, hidden_layers, output_file):
     test_loader = DataLoader(test_dataset, batch_size=32, shuffle=False)
 
     # Model, loss, optimizer
-    model = PrimeMLP(X_train.shape[1], hidden_layers)
-    criterion = nn.BCELoss()
-    # optimizer = optim.AdamW(model.parameters(), lr=0.0001, weight_decay=1e-4)
+    model = MobiusMLP(X_train.shape[1], hidden_layers)
+    criterion = nn.CrossEntropyLoss()
     optimizer = optim.AdamW(model.parameters(), lr=1e-3)
     scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.1)
 
@@ -100,7 +88,7 @@ def run_experiment(N, input_type, hidden_layers, output_file):
         with torch.no_grad():
             for batch_x, batch_y in test_loader:
                 outputs = model(batch_x)
-                predicted = (outputs > 0.5).float()
+                predicted = torch.argmax(outputs, dim=1)
                 correct += (predicted == batch_y).sum().item()
                 total += batch_y.size(0)
         accuracy = correct / total
@@ -111,12 +99,11 @@ def run_experiment(N, input_type, hidden_layers, output_file):
 
 # Run experiments
 Ns = [100, 1000, 10000]
-# Ns = [100000]
 input_types = ['int', 'binary', 'modular']
 hidden_layer_configs = [[], [128], [128, 64]]
-output_file = "PrimeOrNot_experiment_results.txt"
+output_file = "MobiusFunction_experiment_results.txt"
 
-for N in Ns:
-    for input_type in input_types:
-        for hidden_layers in hidden_layer_configs:
-            run_experiment(N, input_type, hidden_layers, output_file)
+# for N in Ns:
+#     for input_type in input_types:
+#         for hidden_layers in hidden_layer_configs:
+#             run_experiment(N, input_type, hidden_layers, output_file)
