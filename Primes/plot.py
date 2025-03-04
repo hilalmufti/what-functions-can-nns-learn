@@ -2,8 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load experiment results from the file
-results_file = "PrimeOrNot_experiment_results.txt"
-function_name = "PrimeOrNot"
+results_file = "MobiusFunction_experiment_results.txt"
+function_name = "MobiusFunction_withMoreLayers"
 
 def load_results(file_path, start_line=1, end_line=27):
     data = []
@@ -65,7 +65,7 @@ def plot_loss_vs_hidden_layers(df, function_name):
 
 
 # Load the data
-df = load_results(results_file, start_line=63, end_line=89)
+df = load_results(results_file, start_line=28, end_line=72)
 
 # Generate plots
 plot_accuracy_vs_input_type(df, function_name)

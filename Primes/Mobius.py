@@ -99,11 +99,12 @@ def run_experiment(N, input_type, hidden_layers, output_file):
 
 # Run experiments
 Ns = [100, 1000, 10000]
+# Ns = [1000]
 input_types = ['int', 'binary', 'modular']
-hidden_layer_configs = [[], [128], [128, 64]]
+hidden_layer_configs = [[], [128], [128, 64], [128, 64, 32], [128, 64, 32, 16]]
 output_file = "MobiusFunction_experiment_results.txt"
 
-# for N in Ns:
-#     for input_type in input_types:
-#         for hidden_layers in hidden_layer_configs:
-#             run_experiment(N, input_type, hidden_layers, output_file)
+for N in Ns:
+    for input_type in input_types:
+        for hidden_layers in hidden_layer_configs:
+            run_experiment(N, input_type, hidden_layers, output_file)
