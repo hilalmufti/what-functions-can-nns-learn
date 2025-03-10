@@ -14,9 +14,29 @@ def compute_mobius(n):
 def to_binary(n, bits=14):
     return np.array([int(x) for x in bin(n)[2:].zfill(bits)])
 
+def primes_upto(N):
+    """
+    Return the prime numbers in the range [0, N) in increasing order.
+    """
+
+    # N should be at least 2 to run the sieve below.
+    if N <= 1:
+        return []
+
+    # Sieve of Eratosthenes, using an array of integers of 0 (not prime) or 1 (prime).
+    sieve = [1] * N
+    sieve[0] = 0
+    sieve[1] = 0
+    for i in range(2, N):
+        if sieve[i] == 1:
+            for j in range(i*i, N, i):
+                sieve[j] = 0
+
+    return [p for p in range(N) if sieve[p] == 1]
+
 # Compute x mod p for small primes (2, 3, 5, 7, 11)
-def modular_features(n):
-    return np.array([n % p for p in [2, 3, 5, 7, 11]])
+def modular_features(n, N):
+    return np.array([n % p for p in primes_upto(N)])
 
 # MLP Model for Möbius classification
 class MobiusMLP(nn.Module):
@@ -44,7 +64,7 @@ def run_experiment(N, input_type, hidden_layers, output_file):
     if input_type == 'binary':
         X = np.array([to_binary(n) for n in X.flatten()])
     elif input_type == 'modular':
-        X = np.array([modular_features(n) for n in X.flatten()])
+        X = np.array([modular_features(n, 100) for n in X.flatten()])
     else:  # Default: integer inputs
         X = X / N  # Normalize
 
