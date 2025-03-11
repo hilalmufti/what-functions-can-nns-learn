@@ -7,8 +7,10 @@ mod2_binary:
     loss: binary_crossentropy
     n_hidden: TODO
     input_dim: TODO
+    hidden_dim: TODO
     output_dim: TODO
     lr: 1e-3
+    seed: 0
 
 
 mod2_integral:
@@ -20,8 +22,10 @@ mod2_integral:
     loss: binary_crossentropy
     n_hidden: TODO
     input_dim: TODO
+    hidden_dim: TODO
     output_dim: TODO
     lr: 1e-3
+    seed: 0
 
 modular_arithmetic:
   args:
@@ -32,8 +36,10 @@ modular_arithmetic:
     loss: binary_crossentropy
     n_hidden: TODO
     input_dim: TODO
+    hidden_dim: TODO
     output_dim: TODO
     lr: 1e-3
+    seed: 0
 
 hamming_weight1:
   args:
@@ -44,8 +50,10 @@ hamming_weight1:
     loss: binary_crossentropy
     n_hidden: TODO
     input_dim: TODO
+    hidden_dim: TODO
     output_dim: TODO
     lr: 1e-3
+    seed: 0
 
 hamming_weight_probability:
   args:
@@ -56,8 +64,10 @@ hamming_weight_probability:
     loss: binary_crossentropy
     n_hidden: TODO
     input_dim: TODO
+    hidden_dim: TODO
     output_dim: TODO
     lr: 1e-3
+    seed: 0
 
 is_prime:
   args:
@@ -68,8 +78,10 @@ is_prime:
     loss: binary_crossentropy
     n_hidden: TODO
     input_dim: TODO
+    hidden_dim: TODO
     output_dim: TODO
     lr: 1e-3
+    seed: 0
 
 mobius:
   args:
@@ -80,8 +92,10 @@ mobius:
     loss: binary_crossentropy
     n_hidden: TODO
     input_dim: TODO
+    hidden_dim: TODO
     output_dim: TODO
     lr: 1e-3
+    seed: 0
 
 totient:
   args:
@@ -92,7 +106,7 @@ totient:
     loss: binary_crossentropy
     n_hidden: TODO
     input_dim: TODO
+    hidden_dim: TODO
     output_dim: TODO
     lr: 1e-3
-
-
+    seed: 0
