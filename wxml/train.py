@@ -1,6 +1,7 @@
 import torch
 # import tqdm
-from tqdm.notebook import tqdm, trange
+# from tqdm.notebook import tqdm, trange
+from tqdm.auto import tqdm, trange
 
 
 def accuracy(x, y):

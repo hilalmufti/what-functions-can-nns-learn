@@ -1,0 +1,91 @@
+mod2_binary:
+  args:
+    n_samples: 10000
+    batch_size: 32
+    epochs: 50
+    optimizer: adam
+    loss: binary_crossentropy
+    n_hidden: TODO
+    input_dim: TODO
+    output_dim: TODO
+
+
+mod2_integral:
+  args:
+    n_samples: 10000
+    batch_size: 32
+    epochs: 50
+    optimizer: adam
+    loss: binary_crossentropy
+    n_hidden: TODO
+    input_dim: TODO
+    output_dim: TODO
+
+modular_arithmetic:
+  args:
+    n_samples: 10000
+    batch_size: 32
+    epochs: 50
+    optimizer: adam
+    loss: binary_crossentropy
+    n_hidden: TODO
+    input_dim: TODO
+    output_dim: TODO
+
+hamming_weight1:
+  args:
+    n_samples: 10000
+    batch_size: 32
+    epochs: 50
+    optimizer: adam
+    loss: binary_crossentropy
+    n_hidden: TODO
+    input_dim: TODO
+    output_dim: TODO
+
+hamming_weight_probability:
+  args:
+    n_samples: 10000
+    batch_size: 32
+    epochs: 50
+    optimizer: adam
+    loss: binary_crossentropy
+    n_hidden: TODO
+    input_dim: TODO
+    output_dim: TODO
+
+is_prime:
+  args:
+    n_samples: 10000
+    batch_size: 32
+    epochs: 50
+    optimizer: adam
+    loss: binary_crossentropy
+    n_hidden: TODO
+    input_dim: TODO
+    output_dim: TODO
+
+mobius:
+  args:
+    n_samples: 10000
+    batch_size: 32
+    epochs: 50
+    optimizer: adam
+    loss: binary_crossentropy
+    n_hidden: TODO
+    input_dim: TODO
+    output_dim: TODO
+
+totient:
+  args:
+    n_samples: 10000
+    batch_size: 32
+    epochs: 50
+    optimizer: adam
+    loss: binary_crossentropy
+    n_hidden: TODO
+    input_dim: TODO
+    output_dim: TODO
+
+
+

@@ -13,11 +13,6 @@ class MLP(nn.Module):
         ])
     
     def forward(self, x):
-        # if isinstance(x, np.ndarray):
-        #     return self.forward(th.tensor(x, dtype=th.float32).unsqueeze(1))
-        
-        # x = x.unsqueeze(1)
-
         for l in self.layers[:-1]:
             x = F.relu(l(x))
         return self.layers[-1](x)
