@@ -8,6 +8,7 @@ mod2_binary:
     n_hidden: TODO
     input_dim: TODO
     output_dim: TODO
+    lr: 1e-3
 
 
 mod2_integral:
@@ -20,6 +21,7 @@ mod2_integral:
     n_hidden: TODO
     input_dim: TODO
     output_dim: TODO
+    lr: 1e-3
 
 modular_arithmetic:
   args:
@@ -31,6 +33,7 @@ modular_arithmetic:
     n_hidden: TODO
     input_dim: TODO
     output_dim: TODO
+    lr: 1e-3
 
 hamming_weight1:
   args:
@@ -42,6 +45,7 @@ hamming_weight1:
     n_hidden: TODO
     input_dim: TODO
     output_dim: TODO
+    lr: 1e-3
 
 hamming_weight_probability:
   args:
@@ -53,6 +57,7 @@ hamming_weight_probability:
     n_hidden: TODO
     input_dim: TODO
     output_dim: TODO
+    lr: 1e-3
 
 is_prime:
   args:
@@ -64,6 +69,7 @@ is_prime:
     n_hidden: TODO
     input_dim: TODO
     output_dim: TODO
+    lr: 1e-3
 
 mobius:
   args:
@@ -75,6 +81,7 @@ mobius:
     n_hidden: TODO
     input_dim: TODO
     output_dim: TODO
+    lr: 1e-3
 
 totient:
   args:
@@ -86,6 +93,6 @@ totient:
     n_hidden: TODO
     input_dim: TODO
     output_dim: TODO
-
+    lr: 1e-3
 
 
