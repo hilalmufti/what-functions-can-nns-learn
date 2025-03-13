@@ -163,7 +163,7 @@ ax.plot(loss[:, 0], loss[:, 2], label='Validation loss')
 ax.set_xlabel('Epoch')
 ax.legend()
 ax.grid()
-ax.set_title(f"Loss over time for a network with hidden layers {hidden_layers}")
+ax.set_title(f"Loss over time")
 plt.show()
 
 with torch.no_grad():

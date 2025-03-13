@@ -22,20 +22,6 @@ def load_results(file_path, start_line=1, end_line=27):
     return pd.DataFrame(data, columns=["N", "Input Type", "Layers", "Avg Loss", "Accuracy"])
 
 
-def plot_accuracy_vs_input_type(df, function_name):
-    plt.figure(figsize=(10, 6))
-    for N in df["N"].unique():
-        subset = df[df["N"] == N]
-        plt.scatter(subset["Input Type"], subset["Accuracy"], marker='o', label=f"N={N}")
-
-    plt.xlabel("Input Type")
-    plt.ylabel("Accuracy")
-    plt.title("Accuracy vs. Input Type for Different Dataset Sizes")
-    plt.legend()
-    plt.grid(True)
-    plt.savefig(f"{function_name}_accuracy_vs_input_type.png")
-
-
 def plot_accuracy_vs_hidden_layers(df, function_name):
     plt.figure(figsize=(10, 6))
     for input_type in df["Input Type"].unique():
@@ -47,7 +33,7 @@ def plot_accuracy_vs_hidden_layers(df, function_name):
     plt.title("Accuracy vs. Hidden Layers for Different Input Types")
     plt.legend()
     plt.grid(True)
-    plt.savefig(f"{function_name}_accuracy_vs_hidden_layers.png")
+    plt.show
 
 
 def plot_loss_vs_hidden_layers(df, function_name):
@@ -61,7 +47,20 @@ def plot_loss_vs_hidden_layers(df, function_name):
     plt.title("Loss vs. Hidden Layers for Different Input Types")
     plt.legend()
     plt.grid(True)
-    plt.savefig(f"{function_name}_loss_vs_hidden_layers.png")
+    plt.show
+
+def plot_accuracy_vs_input_type(df, function_name):
+    plt.figure(figsize=(10, 6))
+    for N in df["N"].unique():
+        subset = df[df["N"] == N]
+        plt.scatter(subset["Input Type"], subset["Accuracy"], marker='o', label=f"N={N}")
+
+    plt.xlabel("Input Type")
+    plt.ylabel("Accuracy")
+    plt.title("Accuracy vs. Input Type for Different Dataset Sizes")
+    plt.legend()
+    plt.grid(True)
+    plt.show
 
 
 # Load the data
@@ -69,5 +68,5 @@ df = load_results(results_file, start_line=28, end_line=72)
 
 # Generate plots
 plot_accuracy_vs_input_type(df, function_name)
-plot_accuracy_vs_hidden_layers(df, function_name)
-plot_loss_vs_hidden_layers(df, function_name)
+# plot_accuracy_vs_hidden_layers(df, function_name)
+# plot_loss_vs_hidden_layers(df, function_name)
