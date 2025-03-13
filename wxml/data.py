@@ -21,5 +21,6 @@ def make_loader(xs, ys, batch_size):
 def make_splits(xs, ys):
     pairs = list(zip(xs, ys))
     train, test = split(pairs, 0.8)
-    val, test = split(test, 0.5)
-    return train, val, test
+    return train, test
+    # val, test = split(test, 0.5)
+    # return train, val, test

@@ -14,10 +14,6 @@ def count_matches(x, y):
 
 
 def classification_accuracy(loader, model, device, dtype):
-    # if loader.dataset.train:
-    #     print("Checking accuracy on validation set")
-    # else:
-    #     print("Checking accuracy on test set")
     n_correct = 0
     n = 0
     model.eval()
@@ -27,14 +23,9 @@ def classification_accuracy(loader, model, device, dtype):
             y = y.to(device=device, dtype=dtype)
             scores = model(x)
             preds = scores.round()
-            # preds = torch.argmax(scores, dim=-1, keepdim=True)
-            # n_correct += torch.sum(preds == y).item()
             n_correct += count_matches(preds, y)
-            # print(count_matches(preds, y), preds, y)
-            # n += len(y)
             n += len(y) * y.shape[-1]
         acy = float(n_correct) / n # TODO: I don't think you need to convert to float
-        # print(f"{n_correct} / {n} correct ({acy:.2f})")
     return acy
 
 
@@ -87,8 +78,6 @@ def train(model, loss_fn, opt, train_loader, val_loader, device, dtype, epochs=1
         "val_accuracies": []
     }
     model = model.to(device)
-    # for e in (pbar := tqdm.trange(epochs, desc="loss: inf, acc: inf")):
-    # with tqdm.trange(epochs, desc="Training") as pbar:
     with trange(epochs) as pbar:
         for e in pbar:
             epoch_results = {
@@ -115,17 +104,4 @@ def train(model, loss_fn, opt, train_loader, val_loader, device, dtype, epochs=1
             results["val_accuracies"].append(val_acy)
 
             tqdm.write(f"epoch={e} | train_loss={train_loss:.4f} | val_loss={val_loss:.4f} | train_acy={train_acy:.4f} | val_acy={val_acy:.4f}")
-
-
-
-            # if i % print_every == 0:
-            #     train_acy = classification_accuracy(train_loader, model, device, dtype)
-            #     val_acy = classification_accuracy(val_loader, model, device, dtype)
-            #     val_loss = val_step(val_loader, model, loss_fn, device, dtype)
-            #     results["train_losses"].append(loss)
-            #     results["val_losses"].append(val_loss)
-            #     results["train_accuracies"].append(train_acy)
-            #     results["val_accuracies"].append(val_acy)
-            #     print(f"i={i} | train_loss={loss:.4f} | val_loss={val_loss:.4f} | train_acy={train_acy:.4f} | val_acy={val_acy:.4f}")
-        
     return results

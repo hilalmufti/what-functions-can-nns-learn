@@ -1,6 +1,6 @@
 mod2_binary:
   args:
-    n_samples: 10000
+    n_samples: 8192
     batch_size: 32
     epochs: 50
     optimizer: adam
@@ -15,7 +15,7 @@ mod2_binary:
 
 mod2_integral:
   args:
-    n_samples: 10000
+    n_samples: 8192
     batch_size: 32
     epochs: 50
     optimizer: adam
@@ -29,7 +29,7 @@ mod2_integral:
 
 modular_arithmetic:
   args:
-    n_samples: 10000
+    n_samples: 8192
     batch_size: 32
     epochs: 50
     optimizer: adam
@@ -43,7 +43,7 @@ modular_arithmetic:
 
 hamming_weight1:
   args:
-    n_samples: 10000
+    n_samples: 8192
     batch_size: 32
     epochs: 50
     optimizer: adam
@@ -57,7 +57,7 @@ hamming_weight1:
 
 hamming_weight_probability:
   args:
-    n_samples: 10000
+    n_samples: 8192
     batch_size: 32
     epochs: 50
     optimizer: adam
@@ -71,7 +71,7 @@ hamming_weight_probability:
 
 is_prime:
   args:
-    n_samples: 10000
+    n_samples: 8192
     batch_size: 32
     epochs: 50
     optimizer: adam
@@ -85,7 +85,7 @@ is_prime:
 
 mobius:
   args:
-    n_samples: 10000
+    n_samples: 8192
     batch_size: 32
     epochs: 50
     optimizer: adam
@@ -99,7 +99,7 @@ mobius:
 
 totient:
   args:
-    n_samples: 10000
+    n_samples: 8192
     batch_size: 32
     epochs: 50
     optimizer: adam

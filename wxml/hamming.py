@@ -66,8 +66,11 @@ def digits_needed(x, b):
     return len(to_base(x, b))
 
 
-def make_data_hamming(n):
-    xs = list(map(bittensor8, take(n, iterate(lambda _: random.randint(0, 64), random.randint(0, 64)))))
+def make_data_hamming(n, k=64):
+    if isinstance(k, int):
+        k = (0, k)
+    
+    xs = list(map(bittensor8, take(n, iterate(lambda _: random.randint(*k), random.randint(*k)))))
     ys = list(map(compose(bittensor8, wt), xs))
 
     [x.requires_grad_() for x in xs]
