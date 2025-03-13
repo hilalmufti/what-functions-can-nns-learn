@@ -126,3 +126,10 @@ N=100000, Input=int, Layers=2 | Avg Loss: 0.0032 | Accuracy: 0.9033
     X = np.array([to_binary(n) for n in X.flatten()])
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (99998,) + inhomogeneous part.
+
+N=10000, Input=int, Layers=3 | Avg Train Loss: 0.0037 | Accuracy: 0.8770
+N=10000, Input=int, Layers=3 | Avg Train Loss: 0.0037 | Accuracy: 0.8770
+N=10000, Input=binary, Layers=3 | Avg Train Loss: 0.0004 | Accuracy: 0.8150
+N=10000, Input=int, Layers=3 | Avg Train Loss: 0.0037 | Accuracy: 0.8770
+N=10000, Input=binary, Layers=3 | Avg Train Loss: 0.0003 | Accuracy: 0.8275
+N=10000, Input=modular, Layers=3 | Avg Train Loss: 0.0002 | Accuracy: 0.8575

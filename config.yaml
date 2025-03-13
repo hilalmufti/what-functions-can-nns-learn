@@ -82,6 +82,8 @@ is_prime:
     output_dim: TODO
     lr: 1e-3
     seed: 0
+    modular_features_N: 100
+    output_file: PrimeOrNot_experiment_results.txt
 
 mobius:
   args:
@@ -89,13 +91,16 @@ mobius:
     batch_size: 32
     epochs: 50
     optimizer: adam
-    loss: binary_crossentropy
-    n_hidden: TODO
-    input_dim: TODO
-    hidden_dim: TODO
-    output_dim: TODO
+    loss: cross_entropy # since predicting -1, 0, 1
+    n_hidden: 3
+    input_dim: TODO # depends on input_type
+    hidden_dim: 64
+    output_dim: 3 # -1, 0, 1
     lr: 1e-3
     seed: 0
+    modular_features_N: 100
+    input_type: integer # integer, binary, modular_features
+    output_file: MobiusFunction_experiment_results.txt
 
 totient:
   args:
